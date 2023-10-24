@@ -1,1 +1,1 @@
-Esta es la documentacion en la rama docs.
+Esta es la documentacion en la rama docs. Con más información
