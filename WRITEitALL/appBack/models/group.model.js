@@ -6,6 +6,7 @@ const groupSchema = new Schema({
     creator: String,
     description: String,
     users: [Schema.Types.ObjectId],
+    posts: [Schema.Types.ObjectId],
 });
 
 module.exports = model('group', groupSchema);
