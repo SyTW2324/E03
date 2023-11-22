@@ -1,0 +1,5 @@
+<ul>
+    <li *ngFor="let user of arrUsers()" [routerLink]="['/users', user._id]">
+        {{user.name}} - {{user.email}}
+    </li>
+</ul>
