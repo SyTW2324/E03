@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-12">
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+                <label class="form-label">Título</label>
+                <input type="text" class="form-control" formControlName="title">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Creador</label>
+                <input type="text" class="form-control" formControlName="creator">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Descripción</label>
+                <input type="text" class="form-control" formControlName="description">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Contenido</label>
+                <input type="text" class="form-control" formControlName="content">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Explicito</label>
+                <input type="checkbox" class="form-check" formControlName="explicit">
+            </div>
+            <input type="submit" value="Enviar" class="btn btn-info">
+        </form>
+    </div>
+</div>

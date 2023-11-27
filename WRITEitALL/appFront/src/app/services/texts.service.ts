@@ -15,7 +15,19 @@ export class TextsService {
     return firstValueFrom(this.httpClient.get<any[]>(this.baseUrl));
   }
 
-    getById(id: string) {
+  getById(id: string) {
     return firstValueFrom(this.httpClient.get<any>(`${this.baseUrl}/${id}`));
-    }
+  }
+
+  create(formValues: any) {
+    return firstValueFrom(this.httpClient.post<any>(this.baseUrl, formValues));
+  }
+
+  update(id: string, formValues: any) {
+    return firstValueFrom(this.httpClient.put<any>(`${this.baseUrl}/${id}`, formValues));
+  }
+
+  deleteById(id: string) {
+    return firstValueFrom(this.httpClient.delete<any>(`${this.baseUrl}/${id}`));
+  }
 }
