@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UsersListComponent } from './components/users/users-list/users-list.component';
@@ -14,6 +14,8 @@ import { DeleteTextComponent } from './components/texts/delete-text/delete-text.
 import { HomePageComponent } from './components/home/home-page/home-page.component';
 import { LoginComponent } from './components/users/login/login.component';
 import { RegisterComponent } from './components/users/register/register.component';
+import { MenuComponent } from './components/ui/menu/menu.component';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,7 @@ import { RegisterComponent } from './components/users/register/register.componen
     HomePageComponent,
     LoginComponent,
     RegisterComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,11 @@ import { RegisterComponent } from './components/users/register/register.componen
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,1 +1,29 @@
-<p>register works!</p>
+<div class="logo-contenedor">
+    <img src="/assets/logo.png" alt="Logo de WRITEitALL">
+    <h1 class="titulo-logo">WRITEitALL</h1>
+    <p class="registro-frase">Registrate aquí</p>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+            <div class="mb-3 mt-0">
+                <label class="form-label">Username</label>
+                <input type="text" class="form-control" formControlName="name">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" formControlName="email">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Contraseña</label>
+                <input type="password" class="form-control" formControlName="password">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Descripción</label>
+                <input type="text" class="form-control" formControlName="description">
+            </div>
+            <input type="submit" value="Enviar" class="btn btn-info">
+        </form>
+    </div>
+</div>

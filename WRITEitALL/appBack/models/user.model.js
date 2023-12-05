@@ -4,9 +4,11 @@ const userSchema = new Schema({
     name: String,
     password: String,
     email: String,
-    age: Number,
     description: String,
-    groups: [Schema.Types.ObjectId],
+    role: {
+        type: String,
+        default: 'regular'
+    }
 });
 
 module.exports = model('user', userSchema);

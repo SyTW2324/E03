@@ -1,0 +1,10 @@
+<nav>
+  <ul>
+    <li *ngIf="usersService.isLogged()" [routerLink]="['/home']">Home</li>
+    <li *ngIf="usersService.isLogged()" [routerLink]="['/texts/new']">Nuevo Texto</li>
+    <li *ngIf="usersService.isLogged()" [routerLink]="['/texts']">Textos</li>
+    <li *ngIf="!usersService.isLogged()" [routerLink]="['/users/login']">Iniciar Sesión</li>
+    <li *ngIf="!usersService.isLogged()" [routerLink]="['/users/register']">Registrarse</li>
+    <li *ngIf="usersService.isLogged()" (click)="onClickLogout()">Cerrar Sesión</li>
+  </ul>
+</nav>

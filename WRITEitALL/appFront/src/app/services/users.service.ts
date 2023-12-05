@@ -14,7 +14,19 @@ export class UsersService {
     return firstValueFrom(this.httpClient.get<any[]>(this.baseUrl));
   }
 
-    getById(id: string) {
+  getById(id: string) {
     return firstValueFrom(this.httpClient.get<any>(`${this.baseUrl}/${id}`));
-    }
+  }
+
+  register(formValues: any) {
+    return firstValueFrom(this.httpClient.post<any>(`${this.baseUrl}/register`, formValues));
+  }
+
+  login(formValues: any) {
+    return firstValueFrom(this.httpClient.post<any>(`${this.baseUrl}/login`, formValues));
+  }
+
+  isLogged():boolean {
+    return localStorage.getItem('user_token') ? true : false;
+  }
 }

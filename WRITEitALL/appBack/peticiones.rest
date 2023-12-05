@@ -5,7 +5,7 @@ GET http://172.16.38.20:3000/api/users/655cc319ce27273be6469ce0
 
 ###
 GET http://172.16.38.20:3000/api/texts/
-
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjU2NWVmNzEzYzQ5YTc3NDEyMmE3MmJlIiwidXNlcl9yb2xlIjoicmVndWxhciIsImlhdCI6MTcwMTE5NDgxMCwiZXhwIjoxNzAxMjgxMjEwfQ.q5-1eIGcl0e56Us7K8SRruCU1MQeQrqVgebS1gtDhpU
 ###
 GET http://172.16.38.20:3000/api/texts/655e51abbb919350ae6a83f2
 
@@ -45,3 +45,24 @@ Content-Type: application/json
 
 ###
 DELETE http://172.16.38.20:3000/api/texts/6560d66ecc33b5ced349d474
+
+###
+
+POST http://172.16.38.20:3000/api/users/register
+Content-Type: application/json
+
+{
+  "name": "user2",
+  "password": "123456",
+  "email": "algo2@mail.com",
+  "description": "Description2"
+}
+
+###
+POST http://172.16.38.20:3000/api/users/login
+Content-Type: application/json
+
+{
+  "email": "algo2@mail.com",
+  "password": "123456"
+}

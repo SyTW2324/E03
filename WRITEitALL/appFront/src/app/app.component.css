@@ -1,0 +1,10 @@
+.container {
+   
+    z-index: 1000; /* Para asegurarse de estar por encima de otros elementos */
+    display: flex;
+    font-size: 1em;
+    flex-direction: column; /* Alinea los elementos en una columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    justify-content: center; /* Centra los elementos verticalmente */
+    margin-bottom: 10rem;
+}
