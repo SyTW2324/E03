@@ -1,0 +1,13 @@
+name: Test BackEnd
+
+on:
+  push:
+    branches:
+      - WiA
+jobs:
+  tests:
+    runs-on: debian-12
+    steps:
+      - name: Instalar las dependencias
+        run: |
+          echo "Instalando dependencias"
