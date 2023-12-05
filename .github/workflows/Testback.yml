@@ -6,8 +6,8 @@ on:
       - WiA
 jobs:
   tests:
-    runs-on: debian-12
+    runs-on: ubuntu/latest
     steps:
       - name: Instalar las dependencias
         run: |
-          echo "Instalando dependencias"
+          cd WRITEitALL/appBack | npm i
