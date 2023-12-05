@@ -16,6 +16,6 @@ jobs:
         with:
           node-version: '20.x'
       - name: Install dependencies
-        run: cd WRITEitALL/appBack | npm install
+        run: cd WRITEitALL/appBack && npm install
       - name: Linter
-        run: cd WRITEitALL/appBack | npm run lint
+        run: cd WRITEitALL/appBack && npm run lint
