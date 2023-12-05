@@ -45,7 +45,7 @@ router.post('/register', async (req, res) => {
             //Comprobar que el email no está en la base de datos.
             const user = await User.findOne({email: req.body.email})
             if (user === null) {
-                const newUser = await User.create(req.body);
+                await User.create(req.body);
                 res.json({success: true, message: 'User registered successfully!'});
             }  else {
                 res.json({success: false, error: 'Email already registered'});

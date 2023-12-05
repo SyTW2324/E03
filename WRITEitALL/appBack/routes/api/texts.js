@@ -45,7 +45,7 @@ router.post('/', async (req, res) => {
             if (!req.body.explicit) {
                 req.body.explicit = false;
             }
-            const text = await Text.create(req.body);
+            await Text.create(req.body);
             res.json({success: true, message: 'Text created successfully!'});
         }
     } catch (error) {
