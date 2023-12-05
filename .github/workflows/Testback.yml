@@ -10,4 +10,4 @@ jobs:
     steps:
       - name: Instalar las dependencias
         run: |
-          cd WRITEitALL/appBack | npm i
+          ls
