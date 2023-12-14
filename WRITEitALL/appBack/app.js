@@ -17,7 +17,7 @@ app.use('/api', require('./routes/api'));
 const PORT = process.env.PORT || 3000;
 
 //Servidor escuchando en el puerto 3000
-const server = app.listen(PORT, '172.16.38.20', () => {
+const server = app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
 
