@@ -1,4 +1,4 @@
-//Gestinoa las rutas de la api de textos
+//Gestiona las rutas de la api de textos
 const router = require('express').Router();
 
 const Text = require('../../models/text.model');
