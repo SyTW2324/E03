@@ -22,5 +22,5 @@ jobs:
       - name: Test
         env:
           MONGO_URI_TEST: ${{ secrets.MONGO_URI_TEST }}
-          MONGO_URI: ${{ secrets.MONGO_URI }}
+          SECRET: ${{ secrets.SECRET }}
         run: cd WRITEitALL/appBack && npm run test
