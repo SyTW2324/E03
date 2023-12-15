@@ -59,10 +59,6 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "host": "172.16.38.20",
-            "port": 4200
-          },
           "configurations": {
             "production": {
               "browserTarget": "appFront:build:production"
@@ -99,5 +95,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

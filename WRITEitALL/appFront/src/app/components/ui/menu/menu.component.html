@@ -1,8 +1,31 @@
+
+<div class="barra-lateral" *ngIf="usersService.isLogged()">
+  <ul>
+      <li class="imagen-hover" [routerLink]="['/home']">
+          <img src="/assets/ojos.png" alt="Home">
+          <span class="texto-hover">Home</span>
+      </li>
+      <li class="imagen-hover" [routerLink]="['/texts']">
+          <img src="/assets/ojos.png" alt="Ver Textos">
+          <span class="texto-hover">Ver Textos</span>
+      </li>
+      <li class="imagen-hover" [routerLink]="['/texts/new']">
+          <img src="/assets/escribir.png" alt="Añadir Texto">
+          <span class="texto-hover">Añadir Texto</span>
+      </li>
+      <li class="imagen-hover">
+          <img src="/assets/perfil.png" alt="Perfil">
+          <span class="texto-hover">Perfil</span>
+      </li>
+      <li class="imagen-hover">
+          <img src="/assets/buscar.png" alt="Buscar">
+          <span class="texto-hover">Buscar</span>
+      </li>
+  </ul>
+</div>
+
 <nav>
   <ul>
-    <li *ngIf="usersService.isLogged()" [routerLink]="['/home']">Home</li>
-    <li *ngIf="usersService.isLogged()" [routerLink]="['/texts/new']">Nuevo Texto</li>
-    <li *ngIf="usersService.isLogged()" [routerLink]="['/texts']">Textos</li>
     <li *ngIf="!usersService.isLogged()" [routerLink]="['/users/login']">Iniciar Sesión</li>
     <li *ngIf="!usersService.isLogged()" [routerLink]="['/users/register']">Registrarse</li>
     <li *ngIf="usersService.isLogged()" (click)="onClickLogout()">Cerrar Sesión</li>

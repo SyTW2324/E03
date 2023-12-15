@@ -9,7 +9,7 @@ export class TextsService {
 
   
   httpClient = inject(HttpClient);
-  baseUrl = "http://10.6.131.98/api/api/texts"
+  baseUrl = "http://localhost:3000/api/texts"
 
   getAll() {
     return firstValueFrom(this.httpClient.get<any[]>(this.baseUrl));

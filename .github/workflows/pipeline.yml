@@ -20,4 +20,7 @@ jobs:
       - name: Linter
         run: cd WRITEitALL/appBack && npm run lint
       - name: Test
+        env:
+          MONGO_URI_TEST: ${{ secrets.MONGO_URI_TEST }}
+          MONGO_URI: ${{ secrets.MONGO_URI }}
         run: cd WRITEitALL/appBack && npm run test

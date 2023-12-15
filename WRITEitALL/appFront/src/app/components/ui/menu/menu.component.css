@@ -1,5 +1,5 @@
 nav {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 nav ul {
@@ -10,6 +10,56 @@ nav ul {
 
 nav ul li {
   padding: 10px 20px;
+  margin-top: 0px;
   background-color: blueviolet;
   cursor: pointer;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.barra-lateral {
+  width: 60px; /* Ajusta según necesites */
+  background-color: #7141b9; /* Color lila */
+  height: 100vh; /* Altura completa de la ventana */
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 20px;
+  margin-top: 0;
+}
+
+.barra-lateral ul {
+  list-style: none;
+  padding: 0;
+}
+
+.barra-lateral li {
+  margin-bottom: 0px;
+  display: flex;
+  align-items: center;
+}
+
+.barra-lateral img {
+  margin-top: 5rem;
+  margin-right: 10px;
+  width: 30px; /* Ajusta este valor para cambiar el ancho de las imágenes */
+  height: auto; /* Mantiene la proporción de las imágenes */
+}
+
+.barra-lateral li:hover .texto-hover {
+  visibility: visible;
+}
+
+.texto-hover {
+  position: relative;
+  left: 100%; /* Ajustar según la posición deseada */
+  top: 0;
+  visibility: hidden;
+  color: white;
+  background-color: rgba(68, 66, 66, 0.7);
+  padding: 5px;
+  border-radius: 5px;
+  white-space: nowrap; /* Evita que el texto se ajuste y permanezca en una sola línea */
 }

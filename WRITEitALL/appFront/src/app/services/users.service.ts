@@ -8,7 +8,7 @@ import { firstValueFrom } from 'rxjs';
 export class UsersService {
 
   httpClient = inject(HttpClient);
-  baseUrl = "http://10.6.131.98/api/api/users"
+  baseUrl = "http://localhost:3000/api/users"
 
   getAll() {
     return firstValueFrom(this.httpClient.get<any[]>(this.baseUrl));
