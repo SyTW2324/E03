@@ -1,0 +1,1 @@
+web: cd WRITEitALL/appBack && npm run start
