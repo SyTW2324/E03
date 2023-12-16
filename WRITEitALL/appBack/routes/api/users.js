@@ -72,7 +72,7 @@ router.post('/login', async (req, res) => {
                 res.json({success: false, error: 'Email not found'});
                 
             }  else {
-                //Comprobar que la contraseña es correcta
+                //Comprobar que la contraseña es correct
                 if (bcrypt.compareSync(req.body.password, user.password)) {
                     res.json({_id: user._id, success: true, token: createToken(user)});
                 } else {
