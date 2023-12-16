@@ -5,11 +5,12 @@
   "main": "index.js",
   "scripts": {
     "start": "concurrently \"cd WRITEitALL/appBack && npm start\" \"cd WRITEitALL/appFront && npm start\" ",
-    "install": "cd WRITEitALL/appBack && npm i && cd ../appFront && npm i"
+    "install": "npm i && cd WRITEitALL/appBack && npm i && cd ../appFront && npm i"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
 }
