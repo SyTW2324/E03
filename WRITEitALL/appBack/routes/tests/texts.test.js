@@ -1,9 +1,9 @@
-import supertest from 'supertest';
-import User from '../../models/user.model';
-import Text from '../../models/text.model';
-import {beforeEach, beforeAll, afterAll, afterEach, test, expect} from '@jest/globals';
-import {app, server} from '../../app.js';
-import mongoose from 'mongoose';
+const supertest = require('supertest');
+const User = require('../../models/user.model');
+const Text = require('../../models/text.model');
+const { beforeAll, afterAll, test, expect } = require('@jest/globals');
+const {app, server} = require('../../app');
+const mongoose = require('mongoose');
 const api = supertest(app);
 
 
@@ -26,7 +26,7 @@ const userTest = {
       const response = await api.post('/api/users/login').send(userTest);
       token = response.body.token;
       //Obtener el id del usuario
-      id = (await api.get('/api/users').set('Authorization', `${token}`)).body[0]._id;
+      id = response.body._id;
       
     });
 

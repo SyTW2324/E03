@@ -74,7 +74,7 @@ router.post('/login', async (req, res) => {
             }  else {
                 //Comprobar que la contraseña es correcta
                 if (bcrypt.compareSync(req.body.password, user.password)) {
-                    res.json({success: true, token: createToken(user)});
+                    res.json({_id: user._id, success: true, token: createToken(user)});
                 } else {
                     res.json({success: false, error: 'Password incorrect'});
                 }

@@ -24,4 +24,11 @@ jobs:
           MONGO_URI_TEST: ${{ secrets.MONGO_URI_TEST }}
           SECRET: ${{ secrets.SECRET }}
         run: cd WRITEitALL/appBack && npm run test
+      - name: Coverage
+        run: cd WRITEitALL/appBack && npm run coverage
+          
+      - name: Coveralls
+        env:
+          COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
+        uses: coverallsapp/github-action@v2
       
