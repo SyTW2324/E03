@@ -19,14 +19,11 @@ jobs:
         run: npm run ins --no-optional --no-audit --no-fund
       - name: Linter
         run: cd WRITEitALL/appBack && npm run lint
-      - name: Testing
+      - name: Test and cover
         env:
           MONGO_URI_TEST: ${{ secrets.MONGO_URI_TEST }}
           SECRET: ${{ secrets.SECRET }}
         run: cd WRITEitALL/appBack && npm run test
-      - name: Coverage
-        run: cd WRITEitALL/appBack && npm run coverage
-          
       - name: Coveralls
         env:
           COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
