@@ -19,7 +19,7 @@ jobs:
         run: npm run install --no-optional --no-audit --no-fund
       - name: Linter
         run: cd WRITEitALL/appBack && npm run lint
-      - name: Test
+      - name: Testing
         env:
           MONGO_URI_TEST: ${{ secrets.MONGO_URI_TEST }}
           SECRET: ${{ secrets.SECRET }}
