@@ -6,10 +6,9 @@
   "scripts": {
     "start": "cross-env NODE_ENV=production node app.js",
     "dev": "cross-env NODE_ENV=development nodemon app.js",
-    "test": "cross-env NODE_ENV=test jest --verbose --runInBand",
+    "test": "cross-env NODE_ENV=test jest --verbose --runInBand --coverage",
     "test:watch": "npm run test -- --watch",
-    "lint": "eslint './**/*.js'",
-    "coverage": "cross-env NODE_ENV=test jest --coverage"
+    "lint": "eslint './**/*.js'"
   },
   "keywords": [],
   "author": "",
