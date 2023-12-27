@@ -2,7 +2,7 @@ const supertest = require('supertest');
 const User = require('../../models/user.model');
 const Text = require('../../models/text.model');
 const { beforeAll, afterAll, test, expect } = require('@jest/globals');
-const {app, server} = require('../../app');
+const {app, server} = require('../../../app');
 const mongoose = require('mongoose');
 const api = supertest(app);
 
