@@ -3,7 +3,7 @@ const cors = require('cors');
 
 //Cargamos las variables de entorno(.env) en process.env
 require('dotenv').config();
-require('./config/db');
+require('./src/config/db');
 
 const app = express();
 //Config Las peticiones se van a enviar en formato JSON
@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 
-app.use('/api', require('./routes/api'));
+app.use('/api', require('./src/routes/api'));
 
 const PORT = process.env.PORT || 3000;
 
