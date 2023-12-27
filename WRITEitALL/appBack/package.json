@@ -8,7 +8,8 @@
     "dev": "cross-env NODE_ENV=development nodemon app.js",
     "test": "cross-env NODE_ENV=test jest --verbose --runInBand --coverage",
     "test:watch": "npm run test -- --watch",
-    "lint": "eslint './**/*.js'"
+    "lint": "eslint './**/*.js'",
+    "build": "babel src -d dist"
   },
   "keywords": [],
   "author": "",
@@ -23,7 +24,8 @@
     "mongoose": "^8.0.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.23.5",
+    "@babel/cli": "^7.23.4",
+    "@babel/core": "^7.23.6",
     "@babel/preset-env": "^7.23.5",
     "@types/jest": "^29.5.10",
     "babel-jest": "^29.7.0",
