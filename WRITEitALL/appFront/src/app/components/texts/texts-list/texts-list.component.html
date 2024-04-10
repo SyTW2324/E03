@@ -1,4 +1,4 @@
-<ul>
+<!--<ul>
     <div *ngFor="let text of arrTexts()">
 
         <li  [routerLink]="['/texts', text._id]">
@@ -8,5 +8,20 @@
             {{text.creator}}
             
         </li>
+    </div>
+</ul>-->
+<ul>
+    <div *ngFor="let text of arrTexts()">
+      <li>
+        <!-- El título del texto como un enlace a su página específica -->
+        <a [routerLink]="['/texts', text._id]">
+          <h2>{{ text.title }}</h2>
+        </a>
+        <!-- La descripción del texto -->
+        <p>{{ text.content }}</p>
+        <!-- Botones de editar y eliminar, visibles solo si el usuario es el propietario del texto -->
+        <button *ngIf="isUserOwner(text._id)" [routerLink]="['/edit', text._id]">Editar</button>
+        <button *ngIf="!isUserOwner(text._id)" >Eliminar</button>
+      </li>
     </div>
 </ul>

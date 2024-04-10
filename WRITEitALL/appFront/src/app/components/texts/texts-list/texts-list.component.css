@@ -1,0 +1,64 @@
+/* Aplicando una fuente general minimalista y colores de fondo */
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #f4f4f9; /* Un fondo claro para contrastar con los elementos morados */
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+  }
+  
+  ul {
+    list-style: none; /* Eliminando los estilos de lista por defecto */
+    padding: 0;
+  }
+  
+  li {
+    background-color: #fff; /* Fondo blanco para cada elemento de lista */
+    border: 1px solid #e1e1e8; /* Un borde sutil */
+    padding: 15px;
+    margin-bottom: 10px; /* Espacio entre los elementos de la lista */
+    border-radius: 5px; /* Bordes redondeados para una apariencia suave */
+  }
+  
+  a {
+    color: #5d55fa; /* Un tono de morado para los enlaces */
+    text-decoration: none; /* Quitando el subrayado de los enlaces */
+  }
+  
+  a:hover {
+    color: #434190; /* Un morado más oscuro para el efecto hover */
+  }
+  
+  h2 {
+    margin-top: 0; /* Removiendo el margen superior para alinear el título con el contenido */
+  }
+  
+  /* Estilos para botones */
+  button {
+    background-color: #5d55fa; /* Color de fondo morado para los botones */
+    color: #ffffff; /* Texto en color blanco para contrastar con el fondo */
+    border: none;
+    padding: 10px 20px;
+    margin-right: 5px; /* Espacio entre botones */
+    border-radius: 3px; /* Bordes redondeados para los botones */
+    cursor: pointer; /* Cursor tipo puntero para indicar que es clickeable */
+    transition: background-color 0.3s ease; /* Transición suave al cambiar de color */
+  }
+  
+  button:hover {
+    background-color: #434190; /* Un tono más oscuro al pasar el mouse por encima */
+  }
+  
+  button:active {
+    transform: scale(0.98); /* Efecto de presión al hacer clic en el botón */
+  }
+  
+  /* Solo si deseas que el botón de eliminar tenga un tono que indique precaución */
+  button.delete-button {
+    background-color: #ff3860; /* Un color rojo para el botón de eliminar */
+  }
+  
+  button.delete-button:hover {
+    background-color: #e12f50; /* Un tono rojo más oscuro para el hover */
+  }
+  

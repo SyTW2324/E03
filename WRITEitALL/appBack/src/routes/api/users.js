@@ -37,12 +37,11 @@ router.post('/register', async (req, res) => {
             res.json({success: false, error: "Password is required and must be at least 6 characters long"});
         } else if (!req.body.email) {
             res.json({success: false, error: "Email is required"});
-        } else if (!req.body.description) {
-            res.json({success: false, error: "Description is required"});
         } else {
             //Encriptar password
             req.body.password = bcrypt.hashSync(req.body.password, 12);
             //Comprobar que el email no está en la base de datos.
+            req.body.description = "";
             const user = await User.findOne({email: req.body.email})
             if (user === null) {
                 await User.create(req.body);

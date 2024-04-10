@@ -1,6 +1,6 @@
 //Gestiona las rutas de la api de textos
 const router = require('express').Router();
-
+const jwt = require('jsonwebtoken');
 const Text = require('../../models/text.model');
 
 //Peticiones GET (leer)
@@ -45,11 +45,32 @@ router.post('/', async (req, res) => {
             if (!req.body.explicit) {
                 req.body.explicit = false;
             }
+            //En creator viene el jwt, hay que desencriptarlo para obtener el id del usuario
+            const token = req.headers['authorization'];
+            const decoded = jwt.verify(token, process.env.SECRET);
+            req.body.creator = decoded.user_id;
             await Text.create(req.body);
             res.json({success: true, message: 'Text created successfully!'});
         }
     } catch (error) {
         res.json({success: false, error: error.message});
+    }
+});
+
+router.post('/:id', async (req, res) => {
+    try {
+        //Check if creator is the same as the id in token
+        const token = req.params.token;
+        const decoded = jwt.verify(token, process.env.SECRET);
+        if (decoded.user_id !== req.body.creator) {
+            res.json({success: false, error: 'You are not authorized to edit this text'});
+            return;
+        } else {
+            res.json({success: true, message: 'User allowed!'});
+        }
+
+    } catch (error) {
+        res.json({error: error.message});
     }
 });
 

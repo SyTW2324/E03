@@ -17,7 +17,6 @@ export class RegisterComponent {
             name: new FormControl(),
             email: new FormControl(),
             password: new FormControl(),
-            description: new FormControl(),
         });
     }
 
@@ -30,16 +29,13 @@ export class RegisterComponent {
         } else if (form.password.length < 6) {
             alert("La contraseña debe tener al menos 6 caracteres");
             return;
-        } else if (form.description.length > 100) {
-            alert("La descripción no puede tener más de 100 caracteres");
-            return;
         } else {
             const response = await this.userService.register(this.formulario.value);
             if (response.success === true) {
                 alert("Usuario registrado correctamente");
                 window.location.href = "/users/login";
             } else {
-                alert("Error al registrar el usuario");
+                alert("Error al registrar el usuario " + response.error);
             }
         }
     

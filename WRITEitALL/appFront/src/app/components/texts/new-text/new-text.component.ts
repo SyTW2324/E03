@@ -27,9 +27,6 @@ export class NewTextComponent {
     if (this.formulario.value.title == null || this.formulario.value.title == "") {
       alert("El título no puede estar vacío");
       return;
-    } else if (this.formulario.value.creator == null || this.formulario.value.creator == "") {
-      alert("El creador no puede estar vacío");
-      return;
     } else if (this.formulario.value.description == null || this.formulario.value.description == "") {
       alert("La descripción no puede estar vacía");
       return;
@@ -40,6 +37,9 @@ export class NewTextComponent {
       if (this.formulario.value.explicit == null) {
         this.formulario.value.explicit = false;
       }
+    //Obtener el jwt para añadir el campo creator
+    const token = localStorage.getItem('user_token');
+    this.formulario.value.creator = token;
     const response = await this.textService.create(this.formulario.value)
     console.log(response);
     }

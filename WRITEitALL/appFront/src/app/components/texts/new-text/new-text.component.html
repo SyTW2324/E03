@@ -1,27 +1,34 @@
-<div class="row">
-    <div class="col-12">
-        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
-            <div class="mb-3">
-                <label class="form-label">Título</label>
-                <input type="text" class="form-control" formControlName="title">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Texto Nuevo</title>
+    <link rel="stylesheet" href="new-text.component.css">
+</head>
+<body>
+    
+    <div class="container">
+        <h2 class="form-title">Comparte tu Historia</h2>
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()" class="text-form">
+            <div class="form-group">
+                <label for="title" class="form-label">Título</label>
+                <input id="title" type="text" class="form-control" formControlName="title" placeholder="Un título intrigante...">
             </div>
-            <div class="mb-3">
-                <label class="form-label">Creador</label>
-                <input type="text" class="form-control" formControlName="creator">
+            <div class="form-group">
+                <label for="description" class="form-label">Descripción</label>
+                <textarea id="description" class="form-control" formControlName="description" rows="2" placeholder="Da una idea de qué trata tu texto..."></textarea>
             </div>
-            <div class="mb-3">
-                <label class="form-label">Descripción</label>
-                <input type="text" class="form-control" formControlName="description">
+            <div class="form-group">
+                <label for="content" class="form-label">Contenido</label>
+                <textarea id="content" class="form-control" formControlName="content" rows="5" placeholder="Escribe tu historia aquí..."></textarea>
             </div>
-            <div class="mb-3">
-                <label class="form-label">Contenido</label>
-                <input type="text" class="form-control" formControlName="content">
+            <div class="form-check">
+                <input id="explicit" type="checkbox" class="form-check-input" formControlName="explicit">
+                <label for="explicit" class="form-check-label">Explícito</label>
             </div>
-            <div class="mb-3">
-                <label class="form-label">Explicito</label>
-                <input type="checkbox" class="form-check" formControlName="explicit">
-            </div>
-            <input type="submit" value="Enviar" class="btn btn-info">
+            <button type="submit" class="btn-submit">Publicar</button>
         </form>
     </div>
-</div>
+    
+</body>
+</html>

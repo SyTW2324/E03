@@ -1,4 +1,4 @@
-nav {
+/*nav {
   margin-top: 10px;
 }
 
@@ -20,9 +20,9 @@ body {
 }
 
 .barra-lateral {
-  width: 60px; /* Ajusta según necesites */
-  background-color: #7141b9; /* Color lila */
-  height: 100vh; /* Altura completa de la ventana */
+  width: 60px; /* Ajusta según necesites *
+  background-color: #7141b9; /* Color lila *
+  height: 100vh; /* Altura completa de la ventana *
   position: fixed;
   left: 0;
   top: 0;
@@ -44,8 +44,8 @@ body {
 .barra-lateral img {
   margin-top: 5rem;
   margin-right: 10px;
-  width: 30px; /* Ajusta este valor para cambiar el ancho de las imágenes */
-  height: auto; /* Mantiene la proporción de las imágenes */
+  width: 30px; /* Ajusta este valor para cambiar el ancho de las imágenes *
+  height: auto; /* Mantiene la proporción de las imágenes *
 }
 
 .barra-lateral li:hover .texto-hover {
@@ -54,12 +54,81 @@ body {
 
 .texto-hover {
   position: relative;
-  left: 100%; /* Ajustar según la posición deseada */
+  left: 100%; /* Ajustar según la posición deseada *
   top: 0;
   visibility: hidden;
   color: white;
   background-color: rgba(68, 66, 66, 0.7);
   padding: 5px;
   border-radius: 5px;
-  white-space: nowrap; /* Evita que el texto se ajuste y permanezca en una sola línea */
+  white-space: nowrap; /* Evita que el texto se ajuste y permanezca en una sola línea *
+}
+*/
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #5c4b99; /* Purple theme color */
+  padding: 1rem;
+}
+
+/* Sidebar Navigation Styles */
+.sidebar .nav-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar .nav-item {
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.nav-icon {
+  height: 24px;
+  margin-right: 0.5rem;
+}
+
+.nav-text {
+  color: white;
+  font-weight: bold;
+}
+
+/* Session Bar Styles */
+.session-bar .nav-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.session-bar .nav-item {
+  margin-right: 1rem;
+  color: white;
+  cursor: pointer;
+}
+
+.session-bar .nav-item:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .sidebar .nav-list, .session-bar .nav-list {
+      display: block;
+  }
+
+  .sidebar .nav-item, .session-bar .nav-item {
+      margin-bottom: 1rem;
+  }
 }

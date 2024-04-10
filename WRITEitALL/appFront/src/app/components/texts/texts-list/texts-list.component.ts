@@ -15,4 +15,13 @@ export class TextsListComponent {
       const texts = await this.textsService.getAll();
       this.arrTexts.set(texts);
     }
+    async deleteText(id: string) {
+      await this.textsService.deleteById(id);
+      const texts = await this.textsService.getAll();
+      this.arrTexts.set(texts);
+    }
+
+    isUserOwner(id_Text: string) {
+      return this.textsService.checkTextOwner(id_Text, localStorage.getItem('user_token'));
+    }
 }

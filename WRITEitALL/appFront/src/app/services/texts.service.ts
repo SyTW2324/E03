@@ -30,4 +30,12 @@ export class TextsService {
   deleteById(id: string) {
     return firstValueFrom(this.httpClient.delete<any>(`${this.baseUrl}/${id}`));
   }
+
+  checkTextOwner(id_Text: string, user_token: string | null) {
+    if (!user_token) {
+      return false;
+    } else {
+      return firstValueFrom(this.httpClient.post<any>(`${this.baseUrl}/${id_Text}`, { creator: user_token }));
+    }
+  }
 }

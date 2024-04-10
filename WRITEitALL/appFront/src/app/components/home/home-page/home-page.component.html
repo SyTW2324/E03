@@ -1,3 +1,29 @@
+<!--<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tu Página Web</title>
+    <link rel="stylesheet" href="home-page.component.css">
+</head>
+<body>--
+    
+     !-- Contenido principal --
+     <div class="contenido">
+        !-- Sección 1 --
+        <div class="seccion">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+            <img src="/assets/ejemplo1.png" alt="Descripción imagen 1">
+        </div>
+
+        !-- Sección 2 --
+        <div class="seccion">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+            <img src="/assets/ejemplo2.png" alt="Descripción imagen 2">
+        </div>
+    </div>
+</body>
+</html>-->
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,20 +33,23 @@
 </head>
 <body>
     
-     <!-- Contenido principal -->
-     <div class="contenido">
-        <!-- Sección 1 -->
-        <div class="seccion">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-            <img src="/assets/ejemplo1.png" alt="Descripción imagen 1">
+    <!-- Header Section -->
+    <header class="header">
+        <h1>Explora y comparte tu creatividad</h1>
+        <p>Un espacio para escritores, lectores y exploradores de historias.</p>
+        <button class="cta-button" routerLink="/texts/new">Empieza a Escribir</button>
+    </header>
+    
+    <!-- Main Content Section -->
+    <section class="main-content">
+        <div class="text-section">
+            <h2>¿Qué encontrarás aquí?</h2>
+            <p>Descubre relatos, poesía y artículos que despiertan emociones y pensamientos. O sumérgete y comparte tus propias creaciones.</p>
         </div>
-
-        <!-- Sección 2 -->
-        <div class="seccion">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-            <img src="/assets/ejemplo2.png" alt="Descripción imagen 2">
+        <div class="image-section">
+            <img src="/assets/creative-writing.png" alt="Escritura Creativa">
         </div>
-    </div>
+    </section>
+    
 </body>
 </html>
-
