@@ -2,6 +2,7 @@
 const router = require('express').Router();
 const jwt = require('jsonwebtoken');
 const Text = require('../../models/text.model');
+const mongoose = require('mongoose');
 
 //Peticiones GET (leer)
 router.get('/', async (req, res) => {
@@ -12,6 +13,21 @@ router.get('/', async (req, res) => {
              res.json({error: error.message});
          }
 });
+
+router.get('/user/:token', async (req, res) => {
+        
+    try {
+        const user_token  = jwt.decode(req.params.token);
+        const userId = user_token.user_id;
+        const creatorObjectId = new mongoose.Types.ObjectId(userId);
+        const texts = await Text.find({creator: creatorObjectId});
+        res.json(texts);
+    
+    } catch (error) {
+        res.json({error: error.message});
+    }
+});
+
 
 router.get('/:id', async (req, res) => {
     try {
@@ -61,8 +77,10 @@ router.post('/:id', async (req, res) => {
     try {
         //Check if creator is the same as the id in token
         const token = req.params.token;
+        const creator = await Text.findById(req.params.id);
+        const creatorId = creator.creator;
         const decoded = jwt.verify(token, process.env.SECRET);
-        if (decoded.user_id !== req.body.creator) {
+        if (decoded.user_id !== creatorId) {
             res.json({success: false, error: 'You are not authorized to edit this text'});
             return;
         } else {

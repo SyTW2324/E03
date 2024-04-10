@@ -1,4 +1,5 @@
 import { HttpClient } from '@angular/common/http';
+import { ResourceLoader } from '@angular/compiler';
 import { inject, Injectable } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
 
@@ -18,6 +19,11 @@ export class TextsService {
   getById(id: string) {
     return firstValueFrom(this.httpClient.get<any>(`${this.baseUrl}/${id}`));
   }
+  async getAllByUser(token: string | null) {
+
+    return await firstValueFrom(this.httpClient.get<any[]>(`${this.baseUrl}/user/${token}`));
+  
+  }
 
   create(formValues: any) {
     return firstValueFrom(this.httpClient.post<any>(this.baseUrl, formValues));
@@ -35,7 +41,11 @@ export class TextsService {
     if (!user_token) {
       return false;
     } else {
-      return firstValueFrom(this.httpClient.post<any>(`${this.baseUrl}/${id_Text}`, { creator: user_token }));
+      console.log("ID: " + id_Text);
+      console.log("Token: " + user_token);
+      const result = firstValueFrom(this.httpClient.post<any>(`${this.baseUrl}/${id_Text}`, { token: user_token}));
+      console.log("Resultado: " + result);
+      return result;
     }
   }
 }

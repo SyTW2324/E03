@@ -12,16 +12,16 @@ export class TextsListComponent {
   textsService = inject(TextsService);
 
     async ngOnInit() {
-      const texts = await this.textsService.getAll();
+      const texts = await this.textsService.getAllByUser(localStorage.getItem('user_token'));
       this.arrTexts.set(texts);
     }
     async deleteText(id: string) {
       await this.textsService.deleteById(id);
-      const texts = await this.textsService.getAll();
+      const texts = await this.textsService.getAllByUser(localStorage.getItem('user_token'));
       this.arrTexts.set(texts);
     }
 
-    isUserOwner(id_Text: string) {
+    async isUserOwner(id_Text: string) {
       return this.textsService.checkTextOwner(id_Text, localStorage.getItem('user_token'));
     }
 }

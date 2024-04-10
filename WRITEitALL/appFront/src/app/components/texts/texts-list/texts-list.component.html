@@ -18,10 +18,10 @@
           <h2>{{ text.title }}</h2>
         </a>
         <!-- La descripción del texto -->
-        <p>{{ text.content }}</p>
+        <p>{{ text.desc }}</p>
         <!-- Botones de editar y eliminar, visibles solo si el usuario es el propietario del texto -->
-        <button *ngIf="isUserOwner(text._id)" [routerLink]="['/edit', text._id]">Editar</button>
-        <button *ngIf="!isUserOwner(text._id)" >Eliminar</button>
+        <button [routerLink]="['/texts/edit', text._id]">Editar</button>
+        <button >Eliminar</button>
       </li>
     </div>
 </ul>

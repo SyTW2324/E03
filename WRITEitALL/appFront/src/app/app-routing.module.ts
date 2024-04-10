@@ -23,6 +23,8 @@ const routes: Routes = [
   //Textos
   //Read
   { path: 'texts', component: TextsListComponent, canActivate: [loginGuard] },
+  //Read By User
+  { path: 'texts/user/:token', component: TextsListComponent, canActivate: [loginGuard] },
   //Create
   { path: 'texts/new', component: NewTextComponent, canActivate: [loginGuard]},
   //Update
