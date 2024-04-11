@@ -19,7 +19,8 @@ export class EditTextComponent {
         title: new FormControl(),
         description: new FormControl(),
         content: new FormControl(),
-        explicit: new FormControl()
+        explicit: new FormControl(),
+        private: new FormControl(),
       })
     }
 
@@ -34,6 +35,7 @@ export class EditTextComponent {
           delete text.comments;
           delete text.likes;
           delete text.creator;
+          delete text.username;
           this.formulario.setValue(text);
         } catch (error) {
           alert("No se ha encontrado el texto");
@@ -62,15 +64,20 @@ export class EditTextComponent {
           if (this.formulario.value.explicit == null) {
             this.formulario.value.explicit = false;
           }
+          if (this.formulario.value.private == null) {
+            this.formulario.value.private = false;
+          }
         }
         const repsonse = await this.textService.update(this.activatedRoute.snapshot.params['id'], this.formulario.value);
         console.log(repsonse);
+        this.router.navigate(['/texts/' + this.activatedRoute.snapshot.params['id']]);
 
       } else if (button.value === "Borrar") {
         const confirmacion = window.confirm("¿Estás seguro que quieres borrar?");
         if (confirmacion) {
           const response = await this.textService.deleteById(this.activatedRoute.snapshot.params['id']);
           console.log(response);
+          this.router.navigate(['/texts']);
         }
         
       } else if (button.value === "Cancelar") {

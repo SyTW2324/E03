@@ -9,6 +9,7 @@ const textSchema = new Schema({
     likes: Number,
     comments: [{user: Schema.Types.ObjectId, comment: String}],
     explicit: Boolean,
+    private: Boolean,
 });
 
 module.exports = model('text', textSchema);

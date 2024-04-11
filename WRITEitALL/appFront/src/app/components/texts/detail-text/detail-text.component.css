@@ -1,0 +1,42 @@
+body {
+    border-radius: 10px;
+}
+
+.text-container {   
+background-color:  #f8e4c9; /* Color de fondo como el ejemplo previo */
+border: 5px solid #bd6df1; /* Borde morado */
+border-radius: 10px;
+padding: 20px;
+max-width: 600px;
+margin-top: 20px;
+margin-bottom: 20px;
+margin-left: auto;
+margin-right: auto;
+}
+
+.text-container h1 {
+color: #000000; /* Color morado para el título */
+font-size: 32px;
+font-weight: bold;
+font-family: 'Times New Roman', Times, serif;
+}
+
+.text-container h2 {
+color: #000000; /* Color morado para el autor */
+font-size: 20px;
+font-style: italic;
+}
+
+.text-container .description {
+color: #686368; /* Color morado para la descripción */
+font-size: 18px;
+margin-top: 10px;
+}
+
+.text-container .content {
+color: #000; /* Texto en color negro para el contenido */
+font-size: 20px;
+margin-top: 20px;
+white-space: pre-wrap; /* Respeta los saltos de línea y espacios */
+}
+  

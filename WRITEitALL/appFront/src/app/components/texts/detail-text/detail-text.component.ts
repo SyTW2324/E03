@@ -13,7 +13,7 @@ export class DetailTextComponent {
   textsService = inject(TextsService);
   text = signal<any>({});
   
-  ngOnInit() {
+  async ngOnInit() {
     this.activatedRoute.params.subscribe(async params => {
       const text = await this.textsService.getById(params['id']);
       this.text.set(text);

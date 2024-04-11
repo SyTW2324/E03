@@ -16,8 +16,8 @@ export class TextsService {
     return firstValueFrom(this.httpClient.get<any[]>(this.baseUrl));
   }
 
-  getById(id: string) {
-    return firstValueFrom(this.httpClient.get<any>(`${this.baseUrl}/${id}`));
+  async getById(id: string) {
+    return await firstValueFrom(this.httpClient.get<any>(`${this.baseUrl}/${id}`));
   }
   async getAllByUser(token: string | null) {
 
@@ -37,6 +37,9 @@ export class TextsService {
     return firstValueFrom(this.httpClient.delete<any>(`${this.baseUrl}/${id}`));
   }
 
+  getPublicTexts() {
+    return firstValueFrom(this.httpClient.get<any[]>(`${this.baseUrl}/public`));
+  }
   checkTextOwner(id_Text: string, user_token: string | null) {
     if (!user_token) {
       return false;

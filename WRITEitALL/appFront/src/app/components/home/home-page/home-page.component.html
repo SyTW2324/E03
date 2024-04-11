@@ -1,29 +1,3 @@
-<!--<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Tu Página Web</title>
-    <link rel="stylesheet" href="home-page.component.css">
-</head>
-<body>--
-    
-     !-- Contenido principal --
-     <div class="contenido">
-        !-- Sección 1 --
-        <div class="seccion">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-            <img src="/assets/ejemplo1.png" alt="Descripción imagen 1">
-        </div>
-
-        !-- Sección 2 --
-        <div class="seccion">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-            <img src="/assets/ejemplo2.png" alt="Descripción imagen 2">
-        </div>
-    </div>
-</body>
-</html>-->
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -47,7 +21,17 @@
             <p>Descubre relatos, poesía y artículos que despiertan emociones y pensamientos. O sumérgete y comparte tus propias creaciones.</p>
         </div>
         <div class="image-section">
-            <img src="/assets/creative-writing.png" alt="Escritura Creativa">
+            <img src="/assets/pluma.png" alt="Escritura Creativa" class="image" >
+        </div>
+
+    </section>
+
+    <section class="texts-section">
+        <div *ngFor="let text of textsArray()" class="text-card">
+            <a href="{{ text.route }}" class="text-link">
+                <div class="text-title">{{ text.title }}</div>
+                <div class="text-description">{{ text.description }}</div>
+            </a>
         </div>
     </section>
     

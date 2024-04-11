@@ -1,9 +1,10 @@
 /* General Styles */
 body {
     font-family: 'Arial', sans-serif;
+    font-size: large;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f8e4c9;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,7 +13,8 @@ body {
 
 /* Container */
 .container {
-    background-color: #fff;
+    background-color: #b596f0;
+    border: 1px solid #7432dd;
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

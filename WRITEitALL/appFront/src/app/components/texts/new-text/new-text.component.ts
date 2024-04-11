@@ -18,7 +18,8 @@ export class NewTextComponent {
         creator: new FormControl(),
         description: new FormControl(),
         content: new FormControl(),
-        explicit: new FormControl()
+        explicit: new FormControl(),
+        private: new FormControl(),
       })
   }
 
@@ -36,6 +37,9 @@ export class NewTextComponent {
     } else {
       if (this.formulario.value.explicit == null) {
         this.formulario.value.explicit = false;
+      }
+      if (this.formulario.value.private == null) {
+        this.formulario.value.private = false;
       }
     //Obtener el jwt para añadir el campo creator
     const token = localStorage.getItem('user_token');

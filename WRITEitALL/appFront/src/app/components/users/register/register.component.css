@@ -1,7 +1,7 @@
 /* Estilos generales */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f4f4f9;
+  background-color:  #f8e4c9;
   margin: 0;
   padding: 0;
 }
@@ -48,7 +48,7 @@ body {
 .col-12 {
   width: 100%;
   max-width: 400px;
-  background: white;
+  background-color: #cca0f0;;
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);

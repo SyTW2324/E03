@@ -1,1 +1,18 @@
-<h1>{{text().title}} - {{text().creator}} - {{text().content}}</h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Texto con Estilo</title>
+<link rel="stylesheet" href="detail-text.component.css">
+</head>
+<body>
+    <div class="text-container">
+        <h1>{{ text().title }}</h1>
+        <h2>Autor: {{ text().username }}</h2>
+        <p class="description">{{ text().description }}</p>
+        <div class="content">{{ text().content }}</div>
+    </div>
+      
+</body>
+</html>

@@ -2,6 +2,7 @@
 const router = require('express').Router();
 const jwt = require('jsonwebtoken');
 const Text = require('../../models/text.model');
+const User = require('../../models/user.model');
 const mongoose = require('mongoose');
 
 //Peticiones GET (leer)
@@ -28,12 +29,33 @@ router.get('/user/:token', async (req, res) => {
     }
 });
 
+router.get('/public', async (req, res) => {
+    try {
+        const texts = await Text.find({private: false});
+        res.json(texts);
+    } catch (error) {
+        res.json({error: error.message});
+    }
+});
+
 
 router.get('/:id', async (req, res) => {
     try {
         const textId  = req.params.id;
     const text = await Text.findById(textId);
-    res.json(text);
+    //Buscar el usuario por el creator y añadir el username al envio
+    const user = await User.findById(text.creator);
+    const response = {
+        "title": text.title,
+        "description": text.description,
+        "content": text.content,
+        "likes": text.likes,
+        "comments": text.comments,
+        "explicit": text.explicit,
+        "private": text.private,
+        "username": user.name
+    }
+    res.json(response);
     } catch (error) {
         res.json({error: error.message});
     }
@@ -60,6 +82,9 @@ router.post('/', async (req, res) => {
             }
             if (!req.body.explicit) {
                 req.body.explicit = false;
+            }
+            if (!req.body.private) {
+                req.body.private = false;
             }
             //En creator viene el jwt, hay que desencriptarlo para obtener el id del usuario
             const token = req.headers['authorization'];

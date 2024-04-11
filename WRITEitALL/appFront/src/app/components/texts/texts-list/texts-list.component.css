@@ -1,7 +1,7 @@
 /* Aplicando una fuente general minimalista y colores de fondo */
 body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    background-color: #f4f4f9; /* Un fondo claro para contrastar con los elementos morados */
+    background-color: #6b46c2; /* Un fondo claro para contrastar con los elementos morados */
     color: #333;
     line-height: 1.6;
     padding: 20px;
@@ -13,10 +13,12 @@ body {
   }
   
   li {
-    background-color: #fff; /* Fondo blanco para cada elemento de lista */
-    border: 1px solid #e1e1e8; /* Un borde sutil */
+    background-color: #b289e9; /* Fondo blanco para cada elemento de lista */
+    border: 1px solid #6310e7; /* Un borde sutil */
     padding: 15px;
-    margin-bottom: 10px; /* Espacio entre los elementos de la lista */
+    margin-bottom: 15px; /* Espacio entre los elementos de la lista */
+    margin-top: 5px;
+    /*Tamaño de izquieda a derecha mayor*/
     border-radius: 5px; /* Bordes redondeados para una apariencia suave */
   }
   

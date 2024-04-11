@@ -18,10 +18,9 @@
           <h2>{{ text.title }}</h2>
         </a>
         <!-- La descripción del texto -->
-        <p>{{ text.desc }}</p>
+        <p>{{ text.description }}</p>
         <!-- Botones de editar y eliminar, visibles solo si el usuario es el propietario del texto -->
         <button [routerLink]="['/texts/edit', text._id]">Editar</button>
-        <button >Eliminar</button>
       </li>
     </div>
 </ul>
