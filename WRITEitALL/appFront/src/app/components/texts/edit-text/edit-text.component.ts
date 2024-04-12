@@ -69,7 +69,6 @@ export class EditTextComponent {
           }
         }
         const repsonse = await this.textService.update(this.activatedRoute.snapshot.params['id'], this.formulario.value);
-        console.log(repsonse);
         this.router.navigate(['/texts/' + this.activatedRoute.snapshot.params['id']]);
 
       } else if (button.value === "Borrar") {

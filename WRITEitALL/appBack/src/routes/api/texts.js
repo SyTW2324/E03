@@ -14,6 +14,14 @@ router.get('/', async (req, res) => {
              res.json({error: error.message});
          }
 });
+router.get('/count/:id', async (req, res) => {
+    try {
+    const count = await Text.countDocuments({creator: req.params.id});
+    res.json(count);
+    } catch (error) {
+        res.json({error: error.message});
+    }
+});
 
 router.get('/user/:token', async (req, res) => {
         
@@ -90,8 +98,8 @@ router.post('/', async (req, res) => {
             const token = req.headers['authorization'];
             const decoded = jwt.verify(token, process.env.SECRET);
             req.body.creator = decoded.user_id;
-            await Text.create(req.body);
-            res.json({success: true, message: 'Text created successfully!'});
+            const text = await Text.create(req.body);
+            res.json({success: true, message: 'Text created successfully!', textId: text._id});
         }
     } catch (error) {
         res.json({success: false, error: error.message});

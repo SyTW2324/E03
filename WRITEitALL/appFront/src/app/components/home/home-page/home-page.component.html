@@ -28,7 +28,7 @@
 
     <section class="texts-section">
         <div *ngFor="let text of textsArray()" class="text-card">
-            <a href="{{ text.route }}" class="text-link">
+            <a href="/texts/{{ text._id }}" class="text-link">
                 <div class="text-title">{{ text.title }}</div>
                 <div class="text-description">{{ text.description }}</div>
             </a>

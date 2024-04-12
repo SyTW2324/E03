@@ -16,10 +16,10 @@ const routes: Routes = [
   //Home
   { path: 'home', component: HomePageComponent, canActivate: [loginGuard] },
   //Usuarios
-  { path: 'users', component: UsersListComponent },
+  { path: 'users', component: UsersListComponent, canActivate: [loginGuard] },
   { path: 'users/register', component: RegisterComponent},
   { path: 'users/login', component: LoginComponent},
-  { path: 'users/:id', component: DetailUserComponent },
+  { path: 'users/:id', component: DetailUserComponent, canActivate: [loginGuard] },
   //Textos
   //Read
   { path: 'texts', component: TextsListComponent, canActivate: [loginGuard] },

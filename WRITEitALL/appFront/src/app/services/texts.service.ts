@@ -51,4 +51,9 @@ export class TextsService {
       return result;
     }
   }
+
+  async getTextsCount(id: string) {
+    const response = await firstValueFrom(this.httpClient.get<any>(`${this.baseUrl}/count/${id}`));
+    return response;
+  }
 }

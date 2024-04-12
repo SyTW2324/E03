@@ -23,7 +23,6 @@ export class LoginComponent {
     async onSubmit() {
       
       const response = await this.usersService.login(this.formulario.value);
-      console.log(response);
       //En teoría debería redirigir a la página de home
       if (response.success === true) {
       //Se guarda el token en localStorage

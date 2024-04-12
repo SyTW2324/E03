@@ -1,1 +1,30 @@
-<h1>{{user().name}}</h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="detail-user.component.css">
+    <title>Perfil de Usuario</title>
+</head>
+<body>
+    <div class="container">
+        <main>
+            <section class="profile-section">
+                <h1>Perfil del Usuario</h1>
+                <div class="profile-pic-container">
+                    <img src="assets/profile-default.png" alt="Avatar por defecto" class="profile-pic">
+                </div>
+                <div class="profile-info">
+                    <h2 id="name">Nombre: {{user().name}}</h2>
+                    <p id="description">{{user().description}}</p>
+                </div>
+                <div class="text-count">
+                    <strong>Textos Realizados: </strong> <span id="texts-count">{{user().textscnt}}</span>
+                </div>
+                <button class="btn" onclick="window.location.href='ruta/editar-perfil'">Editar Perfil</button>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
+

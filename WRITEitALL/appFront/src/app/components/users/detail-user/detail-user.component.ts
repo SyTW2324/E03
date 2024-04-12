@@ -1,7 +1,7 @@
 import { Component, inject, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UsersService } from '../../../services/users.service';
-
+import { TextsService } from '../../../services/texts.service';
 @Component({
   selector: 'app-detail-user',
   templateUrl: './detail-user.component.html',
@@ -10,12 +10,23 @@ import { UsersService } from '../../../services/users.service';
 export class DetailUserComponent {
   activatedRoute = inject(ActivatedRoute);
   usersService = inject(UsersService);
-  user = signal<any>({});
+  textsService = inject(TextsService);
+  user = signal<any>({
+    name: "",
+    description: "",
+    textscnt: 0
+  });
   
-  ngOnInit() {
+  async ngOnInit() {
     this.activatedRoute.params.subscribe(async params => {
       const user = await this.usersService.getById(params['id']);
-      this.user.set(user);
+      const textscount = await this.textsService.getTextsCount(params['id']);
+      const response = {
+        name: user.name,
+        description: user.description,
+        textscnt: textscount
+      }
+      this.user.set(response);
     });
   }
 }

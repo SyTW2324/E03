@@ -41,11 +41,19 @@ export class NewTextComponent {
       if (this.formulario.value.private == null) {
         this.formulario.value.private = false;
       }
-    //Obtener el jwt para añadir el campo creator
-    const token = localStorage.getItem('user_token');
-    this.formulario.value.creator = token;
-    const response = await this.textService.create(this.formulario.value)
-    console.log(response);
+      //Obtener el jwt para añadir el campo creator
+      const token = localStorage.getItem('user_token');
+      this.formulario.value.creator = token;
+      const response = await this.textService.create(this.formulario.value)
+      console.log(response);
+      if (response.success == true) {
+        alert("Texto creado correctamente");
+        //Redirigir a la lista de textos
+        window.location.href = "/texts/" + response.textId;
+
+      } else {
+        alert("Error al crear el texto");
+      }
     }
   }
 }

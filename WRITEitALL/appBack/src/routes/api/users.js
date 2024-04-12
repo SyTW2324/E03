@@ -84,6 +84,15 @@ router.post('/login', async (req, res) => {
     }
 });
 
+router.get('/token/:token', async (req, res) => {
+    try {
+        const token = req.params.token;
+        const user = jwt.verify(token, process.env.SECRET);
+        res.json(user);
+    } catch (error) {
+        res.json({error: error.message});
+    }
+});
 
 function createToken(user) {
     const payload = {
