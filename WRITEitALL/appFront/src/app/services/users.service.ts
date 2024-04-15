@@ -10,21 +10,24 @@ export class UsersService {
   httpClient = inject(HttpClient);
   baseUrl = "http://localhost:3000/api/users"
   user = signal<any>({
-    id: "1234"
+    id: ""
   });
 
   getAll() {
     return firstValueFrom(this.httpClient.get<any[]>(this.baseUrl));
   }
 
-  getById(id: string) {
-    return firstValueFrom(this.httpClient.get<any>(`${this.baseUrl}/${id}`));
+  async getById(id: string) {
+    return await firstValueFrom(this.httpClient.get<any>(`${this.baseUrl}/${id}`));
   }
 
   register(formValues: any) {
     return firstValueFrom(this.httpClient.post<any>(`${this.baseUrl}/register`, formValues));
   }
 
+  update(id: string, formValues: any) {
+    return firstValueFrom(this.httpClient.put<any>(`${this.baseUrl}/${id}`, formValues));
+  }
   async login(formValues: any) {
     const response = await firstValueFrom(this.httpClient.post<any>(`${this.baseUrl}/login`, formValues));
     this.user().id = response._id;

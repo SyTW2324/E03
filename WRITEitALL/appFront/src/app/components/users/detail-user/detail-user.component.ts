@@ -14,6 +14,7 @@ export class DetailUserComponent {
   user = signal<any>({
     name: "",
     description: "",
+    id: "",
     textscnt: 0
   });
   
@@ -24,6 +25,7 @@ export class DetailUserComponent {
       const response = {
         name: user.name,
         description: user.description,
+        id: user._id,
         textscnt: textscount
       }
       this.user.set(response);

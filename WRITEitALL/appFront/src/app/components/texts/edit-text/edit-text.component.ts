@@ -49,7 +49,7 @@ export class EditTextComponent {
   async onSubmit(event: { preventDefault: () => void; submitter: any; }) {
       event.preventDefault();
       const button = event.submitter;
-      if (button.value === "Enviar") {
+      if (button.value === "Terminar") {
         //Comprobar que el formulario contiene los datos correctos
         if (this.formulario.value.title == null || this.formulario.value.title == "") {
           alert("El título no puede estar vacío");

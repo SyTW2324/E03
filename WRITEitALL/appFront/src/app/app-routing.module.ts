@@ -9,6 +9,7 @@ import { TextsListComponent } from './components/texts/texts-list/texts-list.com
 import { DetailUserComponent } from './components/users/detail-user/detail-user.component';
 import { LoginComponent } from './components/users/login/login.component';
 import { RegisterComponent } from './components/users/register/register.component';
+import { EditUserComponent } from './components/users/edit-user/edit-user.component';
 import { UsersListComponent } from './components/users/users-list/users-list.component';
 import { loginGuard } from './guards/login.guard';
 
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'users', component: UsersListComponent, canActivate: [loginGuard] },
   { path: 'users/register', component: RegisterComponent},
   { path: 'users/login', component: LoginComponent},
+  { path: 'users/edit-user', component: EditUserComponent, canActivate: [loginGuard] },
   { path: 'users/:id', component: DetailUserComponent, canActivate: [loginGuard] },
   //Textos
   //Read

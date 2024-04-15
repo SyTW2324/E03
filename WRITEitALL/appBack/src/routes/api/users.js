@@ -93,6 +93,16 @@ router.get('/token/:token', async (req, res) => {
         res.json({error: error.message});
     }
 });
+//update user
+router.put('/:id', async (req, res) => {
+    try {
+        const userId  = req.params.id;
+    const user = await User.findByIdAndUpdate(userId, req.body);
+    res.json(user);
+    } catch (error) {
+        res.json({succes: false, error: "No se ha podido encontrar el usuario"});
+    }
+});
 
 function createToken(user) {
     const payload = {

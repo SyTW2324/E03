@@ -8,6 +8,7 @@ import { DetailUserComponent } from './components/users/detail-user/detail-user.
 import { TextsListComponent } from './components/texts/texts-list/texts-list.component';
 import { DetailTextComponent } from './components/texts/detail-text/detail-text.component';
 import { NewTextComponent } from './components/texts/new-text/new-text.component';
+import { EditUserComponent } from './components/users/edit-user/edit-user.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EditTextComponent } from './components/texts/edit-text/edit-text.component';
 import { DeleteTextComponent } from './components/texts/delete-text/delete-text.component';
@@ -31,6 +32,7 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     LoginComponent,
     RegisterComponent,
     MenuComponent,
+    EditUserComponent,
   ],
   imports: [
     BrowserModule,

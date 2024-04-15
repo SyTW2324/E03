@@ -1,9 +1,10 @@
 /* General Styles */
 body {
     font-family: 'Arial', sans-serif;
+    font-size: large;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f8e4c9;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,7 +13,8 @@ body {
 
 /* Container */
 .container {
-    background-color: #fff;
+    background-color: #b596f0;
+    border: 1px solid #7432dd;
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -66,4 +68,28 @@ body {
     font-size: 0.9rem;
 }
 
+/* Submit Button Styles */
+.btn-submit {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    background-color: #5c4b99;
+    color: white;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
+.btn-submit:hover {
+    background-color: #7a6fb3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        margin: 2rem;
+    }
+}

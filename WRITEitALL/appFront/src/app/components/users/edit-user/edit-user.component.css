@@ -1,0 +1,99 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color:  #f8e4c9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: #dab3ff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 300px;
+}
+
+.form-title {
+    color: #4d2c91;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-label {
+    display: block;
+    color: #4d2c91;
+    margin-bottom: 5px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #a179b3;
+    box-sizing: border-box;
+}
+
+.btn-submit {
+    background: #4d2c91;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-submit:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.btn-submit:hover {
+    background: #3b2077;
+}
+
+/* Since both buttons are submit buttons, adding a class to distinguish the cancel button */
+.btn-cancel {
+    background: #bbb;
+    color: #333;
+}
+
+.btn-cancel:hover {
+    background: #a0a0a0;
+}
+
+/* Adjustments to match the profile viewing page styles */
+textarea.form-control {
+    resize: none; /* Prevents resizing of textarea */
+}
+
+/* This is to simulate the placeholder profile picture */
+.form-group.profile-pic {
+    text-align: center;
+}
+
+.form-group.profile-pic img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #ccc;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+input[type="file"] {
+    border: none;
+    margin-top: 10px;
+}
